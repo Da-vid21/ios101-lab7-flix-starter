@@ -59,6 +59,10 @@ extension Movie{
         let encodedData = try! JSONEncoder().encode(movies)
         // 3.
         defaults.set(encodedData, forKey: key)
+        
+        for movie in movies {
+            print(movie.title)
+        }
     }
 
     // Get the array of favorite movies from UserDefaults

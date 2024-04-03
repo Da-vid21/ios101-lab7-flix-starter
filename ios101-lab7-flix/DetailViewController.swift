@@ -18,7 +18,6 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var movie: Movie!
     
     @IBAction func didTapFavoriteButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -35,17 +34,14 @@ class DetailViewController: UIViewController {
 
     // TODO: Add favorite button action
 
-    
+    var movie: Movie!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // TODO: Update favorite button selected state
         favoriteButton.layer.cornerRadius = favoriteButton.frame.width/2
-        
-        let favorites = Movie.getMovies(forKey: Movie.favoritesKey)
-        // 2.
-        
+
 
 
         // MARK: Style views

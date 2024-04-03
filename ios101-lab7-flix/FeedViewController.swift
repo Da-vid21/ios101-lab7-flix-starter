@@ -154,11 +154,11 @@ class FeedViewController: UIViewController, UITableViewDataSource {
                     print("✅ SUCCESS!!! Fetched \(movies.count) movies")
 
                     // Iterate over all movies and print out their details.
-//                    for (index, movie) in movies.enumerated() {
-//                        print("🍿 MOVIE \(index) ------------------")
-//                        print("Title: \(movie.title)")
-//                        print("Overview: \(movie.overview)")
-//                    }
+                    for (index, movie) in movies.enumerated() {
+                        print("🍿 MOVIE \(index) ------------------")
+                        print("Title: \(movie.title)")
+                        print("Overview: \(movie.overview)")
+                    }
 
                     // MARK: - Update the movies property so we can access movie data anywhere in the view controller.
                     self?.movies = movies
