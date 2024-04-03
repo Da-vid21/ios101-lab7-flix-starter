@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r00-Jb-S6c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ig-gJ-Grh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,7 +54,7 @@
                                             <outlet property="overviewLabel" destination="OKj-BA-xio" id="GAh-gc-nFo"/>
                                             <outlet property="posterImageView" destination="SSg-le-c88" id="ZDw-Vq-XmX"/>
                                             <outlet property="titleLabel" destination="dNJ-r2-qcP" id="7bj-xh-JFe"/>
-                                            <segue destination="H2z-Jj-psh" kind="show" id="hfi-48-ubo"/>
+                                            <segue destination="1Ig-gJ-Grh" kind="show" id="hfi-48-ubo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -122,13 +122,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwK-pU-pWc">
+                                <rect key="frame" x="349" y="314" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="heart" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                </state>
+                                <state key="selected" image="heart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapFavoriteButton:" destination="H2z-Jj-psh" eventType="touchUpInside" id="cRp-Xz-qE0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o95-lt-8HL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="OKM-dJ-o1G"/>
                     <navigationItem key="navigationItem" title="Movie Details" largeTitleDisplayMode="never" id="V2m-Yj-CJe"/>
                     <connections>
                         <outlet property="backdropImageView" destination="deP-SK-iIR" id="1c7-4Q-0sj"/>
+                        <outlet property="favoriteButton" destination="ZwK-pU-pWc" id="hlh-nC-Ttv"/>
                         <outlet property="overviewTextView" destination="QMb-Q3-L8A" id="6oZ-ng-34y"/>
                         <outlet property="posterImageShadowView" destination="XPC-qI-pi0" id="Ye9-wc-tCT"/>
                         <outlet property="posterImageView" destination="eFS-JQ-YzC" id="5cH-02-Oo3"/>
@@ -139,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVQ-SM-UZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881.679389312977" y="-308.45070422535213"/>
+            <point key="canvasLocation" x="2808.3969465648852" y="-308.45070422535213"/>
         </scene>
         <!--Item-->
         <scene sceneID="c88-ii-B8m">
@@ -205,7 +221,7 @@
                                             <outlet property="overviewLabel" destination="IQB-k3-QpF" id="Aa3-Pf-eTR"/>
                                             <outlet property="posterImageView" destination="O0p-8q-eEg" id="egw-c0-TrQ"/>
                                             <outlet property="titleLabel" destination="P7P-Gb-Rr4" id="8bi-gh-TQH"/>
-                                            <segue destination="H2z-Jj-psh" kind="show" id="E9M-SY-9f1"/>
+                                            <segue destination="1Ig-gJ-Grh" kind="show" id="E9M-SY-9f1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -250,19 +266,42 @@
             </objects>
             <point key="canvasLocation" x="30" y="420"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ffU-g9-6rt">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1Ig-gJ-Grh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zO8-ow-AEi"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6DM-v4-hl9">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="H2z-Jj-psh" kind="relationship" relationship="viewControllers" id="i9J-3B-4t3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyR-7j-Yvt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881.679389312977" y="-308.45070422535213"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="E9M-SY-9f1"/>
+        <segue reference="hfi-48-ubo"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
